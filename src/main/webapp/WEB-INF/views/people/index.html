@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>People</title>
+</head>
+<body>
+
+    <h1>The list of people: </h1>
+
+    <ol>
+        <li th:each="person : ${people}">
+            <a th:text="${person.getName()}" th:href="@{/people/{id}(id=${person.getId()})}"></a>
+        </li>
+    </ol>
+
+</body>
+</html>
