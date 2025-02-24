@@ -8,11 +8,9 @@
 
     <h1>The list of people: </h1>
 
-    <ul>
-        <li th:each="person : ${people}">
-            <a th:text="${person.getName()}" th:href="@{/people/{id}(id=${person.getId()})}"></a>
-        </li>
-    </ul>
+    <div th:each="person : ${people}">
+        <a th:text="${person.getName()} + ', ' + ${person.getAge()}" th:href="@{/people/{id}(id=${person.getId()})}"></a>
+    </div>
     <br>
     <hr>
     <a th:href="@{/people/new}">< Add new person ></a>
