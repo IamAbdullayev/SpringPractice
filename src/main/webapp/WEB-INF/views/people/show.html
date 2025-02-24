@@ -5,10 +5,19 @@
     <title>Show</title>
 </head>
 <body>
+  <p>Name: <span th:text="${person.getName()}"></span></p>
+  <p>ID: <span th:text="${person.getId()}"></span></p>
 
-  <h1>Person: </h1>
-  <h2 th:text="${person.getName()}"></h2>
-  <h2 th:text="${person.getId()}"></h2>
+  <br>
+  <hr>
 
+  <a th:href="@{/people/{id}/edit(id=${person.getId()})}"> Edit</a>
+
+  <br>
+  <br>
+
+  <form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
+      <input type="submit" value="<DELETE>"/>
+  </form>
 </body>
 </html>
