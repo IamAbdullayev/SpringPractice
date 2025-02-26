@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/ebba714b-f91c-40df-9a1c-5515e05b96ef/console.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/abdullayev/apps/dao/PersonDAO.java" dialect="GenericSQL" />
+  </component>
+</project>
