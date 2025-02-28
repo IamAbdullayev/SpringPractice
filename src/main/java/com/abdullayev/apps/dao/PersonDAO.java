@@ -7,9 +7,6 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
-
-import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -52,8 +49,8 @@ public class PersonDAO {
     public void update(Person updatePerson, int id) {
         try {
             jdbcTemplate.update(
-                    "UPDATE person SET name=?, age=?, email=?",
-                    updatePerson.getName(), updatePerson.getAge(), updatePerson.getEmail());
+                    "UPDATE person SET name=?, age=?, email=? WHERE id=?",
+                    updatePerson.getName(), updatePerson.getAge(), updatePerson.getEmail(), id);
 
         } catch (DataAccessException e) {
             throw new RuntimeException(e);
